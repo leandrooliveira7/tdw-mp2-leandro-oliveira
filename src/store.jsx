@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { tmdbApi } from "./Services/tmdbAPI.js";
+import { tmdbApi2 } from "./Services/tmdbAPI2.js";
 
 const genreSlice = createSlice({
   name: "genre",
@@ -19,8 +20,9 @@ export const store = configureStore({
   reducer: {
     genre: genreSlice.reducer,
     [tmdbApi.reducerPath]: tmdbApi.reducer,
+    [tmdbApi2.reducerPath]: tmdbApi2.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(tmdbApi.middleware),
+    getDefaultMiddleware().concat(tmdbApi.middleware).concat(tmdbApi2.middleware),
 });
 

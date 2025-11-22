@@ -50,7 +50,7 @@ const GenreSelector = () => {
                           } focus:outline-none focus:ring-0`}
                   onClick={() => {
                     dispatch(
-                      setGenero(setGenero({ id: genre.id, name: genre.name }))
+                      setGenero({ id: genre.id, name: genre.name })
                     );
                     navigate("/genre");
                   }}
