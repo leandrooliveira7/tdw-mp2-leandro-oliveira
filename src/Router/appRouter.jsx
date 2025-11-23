@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../Pages/Home/home.jsx";
 import {Genre} from "../Pages/Genre/genre.jsx";
-import MovieDetails from "../Pages/MovieDetails/movieDetails.jsx";
+import {MovieDetails} from "../Pages/MovieDetails/movieDetails.jsx";
 import About from "../Pages/About/about.jsx";
 
 export default function AppRouter() {
@@ -9,7 +9,8 @@ export default function AppRouter() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/genre" element={<Genre />} /> 
+      <Route path="/genre" element={<Genre />} />
+      <Route path="/movie/moviedetails/:id" element={<MovieDetails />} />
     </Routes>
   );
 }

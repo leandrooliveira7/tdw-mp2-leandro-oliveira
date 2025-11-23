@@ -1,15 +1,13 @@
 import React from "react";
 import { useGetPopularMoviesQuery } from "../../Services/tmdbAPI.js";
-import {GenreSelector} from "../../components/Movies/genreSelector.jsx";
-import {MovieGrid} from "../../components/Movies/movieGrid.jsx";
+import { GenreSelector } from "../../components/Movies/genreSelector.jsx";
+import { MovieGrid } from "../../components/Movies/movieGrid.jsx";
 
 const Home = () => {
   const { data, error, isLoading } = useGetPopularMoviesQuery();
 
   if (isLoading) return <p>Carregando...</p>;
   if (error) return <p>Erro ao buscar os filmes.</p>;
-
-  console.log("DATA →", data);
 
   const movies = data?.results ?? [];
 

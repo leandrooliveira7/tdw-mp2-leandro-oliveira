@@ -1,10 +1,14 @@
+import { useSelector } from "react-redux";
+import { useGetMoviesByGenreQuery } from "../../Services/tmdbAPI2.js";
+import { MovieDetail } from "../../components/Movies/movieDetail.jsx";
+
 const MovieDetails = () => {
+  const movie = useSelector((state) => state.movie.selectedMovie);
   return (
-    <article style={{ padding: 20 }}>
-      <h2>Movie Details</h2>
-      <p>Movie details placeholder.</p>
+    <article className="p-5 m-4">
+      <MovieDetail />
     </article>
   );
 };
 
-export default MovieDetails;
+export { MovieDetails };

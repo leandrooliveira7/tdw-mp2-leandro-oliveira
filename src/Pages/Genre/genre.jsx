@@ -5,7 +5,9 @@ import { MovieGrid } from "../../components/Movies/movieGrid.jsx";
 
 const Genre = () => {
   const selectedGenre = useSelector((state) => state.genre.selectedGenre);
-  const { data, isLoading, error } = useGetMoviesByGenreQuery(selectedGenre?.id);
+  const { data, isLoading, error } = useGetMoviesByGenreQuery(
+    selectedGenre?.id
+  );
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Something went wrong!</p>;
