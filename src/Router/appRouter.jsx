@@ -3,6 +3,7 @@ import Home from "../Pages/Home/home.jsx";
 import {Genre} from "../Pages/Genre/genre.jsx";
 import {MovieDetails} from "../Pages/MovieDetails/movieDetails.jsx";
 import About from "../Pages/About/about.jsx";
+import { SearchResults } from "../components/Search/searchResults.jsx";
 
 export default function AppRouter() {
   return (
@@ -11,6 +12,7 @@ export default function AppRouter() {
       <Route path="/about" element={<About />} />
       <Route path="/genre" element={<Genre />} />
       <Route path="/movie/moviedetails/:id" element={<MovieDetails />} />
+      <Route path="search/:query" element={<SearchResults />} />
     </Routes>
   );
 }
