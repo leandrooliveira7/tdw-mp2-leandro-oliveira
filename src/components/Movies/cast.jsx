@@ -15,7 +15,7 @@ const Cast = ({ movieId }) => {
       {castToShow.length === 0 ? (
         <p>Nenhum ator disponível.</p>
       ) : (
-        <ul className="flex flex-wrap gap-4">
+        <ul className="flex flex-wrap justify-between gap-4">
           {castToShow.slice(0, 8).map((actor) => (
             <li key={actor.id} className="w-24 text-center">
               <img
