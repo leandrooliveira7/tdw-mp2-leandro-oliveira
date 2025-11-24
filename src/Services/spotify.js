@@ -2,6 +2,8 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 
 const basicAuth = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
 

@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const API_KEY = "AIzaSyD8HMEVBusRhTJbC9UlNVseHqvr6pLDNi0";
+const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
 export const youtubeAPI = createApi({
   reducerPath: "youtubeAPI",
