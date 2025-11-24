@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Cast } from "../Movies/cast.jsx";
 import { Tracklist } from "../Media/soundtrack.jsx";
 import { setCast } from "../../store.jsx";
+import { Trailer } from "../Media/trailer.jsx";
 
 const MovieDetail = () => {
   const movie = useSelector((state) => state.movie.selectedMovie);
@@ -83,8 +84,17 @@ const MovieDetail = () => {
         </div>
       </div>
 
-      <div>
-        <Tracklist movie={movie} />
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-12 md:col-span-6">
+          <div className="h-full bg-white/5 dark:bg-gray-800 rounded-lg shadow flex flex-col">
+            <Tracklist movie={movie} />
+          </div>
+        </div>
+        <div className="col-span-12 md:col-span-6">
+          <div className="h-full bg-white/5 dark:bg-gray-800 rounded-lg shadow flex flex-col">
+            <Trailer movieTitle={movie.title} />
+          </div>
+        </div>
       </div>
     </article>
   );

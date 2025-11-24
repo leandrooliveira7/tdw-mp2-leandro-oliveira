@@ -18,13 +18,16 @@ const Tracklist = ({ movie }) => {
     spotifyUrl: album.external_urls?.spotify || "#",
   };
   return (
-    <div className="p-5 m-4">
-      <div className=" w-1/2 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden flex items-center p-4">
-        <img
-          className="h-24 w-24 sm:h-32 sm:w-32 object-cover rounded-md mr-4"
-          src={tracklist.albumCover}
-          alt={tracklist.albumTitle}
-        />
+    <div className="p-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="flex-shrink-0">
+          <img
+            className="h-24 w-24 sm:h-32 sm:w-32 object-cover rounded-md"
+            src={tracklist.albumCover}
+            alt={tracklist.albumTitle}
+          />
+        </div>
+
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
             {tracklist.albumTitle}
@@ -32,18 +35,18 @@ const Tracklist = ({ movie }) => {
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
             {tracklist.artistName}
           </p>
-          <p>
-            
-          </p>
-          <a
-            href={tracklist.spotifyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-3 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-700 transition"
-            aria-label="Open album on Spotify"
-          >
-            Open in Spotify →
-          </a>
+
+          <div className="mt-2">
+            <a
+              href={tracklist.spotifyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-3 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-700 transition"
+              aria-label="Open album on Spotify"
+            >
+              Open in Spotify →
+            </a>
+          </div>
         </div>
       </div>
     </div>

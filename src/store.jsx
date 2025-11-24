@@ -3,6 +3,7 @@ import { tmdbApi } from "./Services/tmdbAPI.js";
 import { tmdbApi2 } from "./Services/tmdbAPI2.js";
 import { tmdbApi3 } from "./Services/tmdbAPI3.js";
 import { spotifyApi } from "./Services/spotify.js";
+import { youtubeAPI } from "./Services/youtube.js";
 
 const genreSlice = createSlice({
   name: "genre",
@@ -54,10 +55,24 @@ const TracklistSlice = createSlice({
   },
 });
 
+const TrailerSlice = createSlice({
+  name: "trailer",
+  initialState: {
+    trailers: {},
+  },
+  reducers: {
+    setTrailers: (state, action) => {
+      const { movieId, trailers } = action.payload;
+      state.trailers[movieId] = trailers;
+    },
+  },
+});
+
 export const { setGenero } = genreSlice.actions;
 export const { setSelectedMovie } = movieSlice.actions;
 export const { setCast } = castSlice.actions;
 export const { setTracklist } = TracklistSlice.actions;
+export const { setTrailers } = TrailerSlice.actions;
 
 export const store = configureStore({
   reducer: {
@@ -68,12 +83,14 @@ export const store = configureStore({
     [tmdbApi2.reducerPath]: tmdbApi2.reducer,
     [tmdbApi3.reducerPath]: tmdbApi3.reducer,
     [spotifyApi.reducerPath]: spotifyApi.reducer,
+    [youtubeAPI.reducerPath]: youtubeAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .concat(tmdbApi.middleware)
       .concat(tmdbApi2.middleware)
       .concat(tmdbApi3.middleware)
-      .concat(spotifyApi.middleware),
+      .concat(spotifyApi.middleware)
+      .concat(youtubeAPI.middleware),
 });
 
