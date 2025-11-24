@@ -2,10 +2,8 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const client_id = "eed4d9a33765400da0fa28309e826b3a";
-const client_secret = "a45da55370c84180a2d9d58e404bd40b";
 
-const basicAuth = btoa(`${client_id}:${client_secret}`);
+const basicAuth = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
 
 const rawBaseQuery = fetchBaseQuery({ baseUrl: "https://api.spotify.com/v1" });
 

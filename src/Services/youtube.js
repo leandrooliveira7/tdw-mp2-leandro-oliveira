@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const APIkey = "AIzaSyD8HMEVBusRhTJbC9UlNVseHqvr6pLDNi0";
+const API_KEY = "AIzaSyD8HMEVBusRhTJbC9UlNVseHqvr6pLDNi0";
 
 export const youtubeAPI = createApi({
   reducerPath: "youtubeAPI",
@@ -12,7 +12,7 @@ export const youtubeAPI = createApi({
       query: (movieTitle) =>
         `search?part=snippet&q=${encodeURIComponent(
           movieTitle + " trailer"
-        )}&key=${APIkey}&type=video&maxResults=1`,
+        )}&key=${API_KEY}&type=video&maxResults=1`,
     }),
   }),
 });
