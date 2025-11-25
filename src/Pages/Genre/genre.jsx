@@ -13,16 +13,24 @@ const Genre = () => {
   if (error) return <p>Something went wrong!</p>;
 
   return (
+    //TODO: adicionar campo de pesquisa aqui, junto ao género; o género tem de estar maior
     <div>
       <div className="p-5 m-4">
-        <h3 className="font-bold text-xl">
-          {selectedGenre ? selectedGenre.name : "No genre selected"}
-        </h3>
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="font-bold text-xl">
+              {selectedGenre ? selectedGenre.name : "No genre selected"}
+            </h1>
+            <div className="flex">
+              <SearchInput />
+            </div>
+          </div>
 
-        <GenreSelector className="mb-3" />
+          <GenreSelector className="mb-3" />
 
-        <div className="mt-3">
-          <MovieGrid movies={data?.results || []} />
+          <div className="mt-3">
+            <MovieGrid movies={data?.results || []} />
+          </div>
         </div>
       </div>
     </div>
