@@ -109,6 +109,4 @@ export const store = configureStore({
       .concat(spotifyApi.middleware)
       .concat(youtubeAPI.middleware)
       .concat(tmdbApi4.middleware),
-      
 });
-
