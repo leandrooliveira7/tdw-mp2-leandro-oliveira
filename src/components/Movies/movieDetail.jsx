@@ -28,7 +28,7 @@ const MovieDetail = () => {
           <img
             src={posterSrc}
             alt={movie.title}
-            className="w-72 rounded-lg object-cover"
+            className="w-85 rounded-lg object-cover"
           />
         </div>
 
