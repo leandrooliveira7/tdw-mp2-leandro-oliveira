@@ -14,7 +14,6 @@ export async function handler(event) {
     "base64"
   );
 
-  // Pega token do Spotify
   const tokenResponse = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {

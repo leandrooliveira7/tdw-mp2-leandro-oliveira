@@ -1,22 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const token = process.env.TMDB_TOKEN;
-
-export const tmdbApi4 = createApi({
-  reducerPath: "tmdbApi4",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.themoviedb.org/3",
-    prepareHeaders: (headers) => {
-      headers.set("Authorization", `Bearer ${token}`);
-      return headers;
-    },
-  }),
+export const tmdbApi = createApi({
+  reducerPath: "tmdbApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }),
   endpoints: (builder) => ({
-    getMoviebySearch: builder.query({
-      query: (query) =>
-        `/search/movie?query=${query}&include_adult=false&include_video=false&language=en-US`,
+    getMovieBySearch: builder.query({
+      query: (searchQuery) =>
+        `getMovieBySearch?query=${encodeURIComponent(searchQuery)}`,
     }),
   }),
 });
 
-export const { useGetMoviebySearchQuery } = tmdbApi4;
+export const { useGetMovieBySearchQuery } = tmdbApi;
