@@ -1,14 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const tmdbApi = createApi({
-  reducerPath: "tmdbApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }), // chama a função serverless
+export const tmdbApiTrending = createApi({
+  reducerPath: "tmdbApiTrending",
+  baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }),
   endpoints: (builder) => ({
-    getMovieBySearch: builder.query({
-      query: (searchQuery) =>
-        `getTrendingMovies?query=${encodeURIComponent(searchQuery)}`,
+    getTrendingMovies: builder.query({
+      query: () => `getTrendingMovies`,
     }),
   }),
 });
 
-export const { useGetMovieBySearchQuery } = tmdbApi;
+export const { useGetTrendingMoviesQuery } = tmdbApiTrending;
