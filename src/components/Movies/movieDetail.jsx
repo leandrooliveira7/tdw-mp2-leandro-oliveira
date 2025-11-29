@@ -90,12 +90,12 @@ const MovieDetail = () => {
 
       <div className="grid grid-cols-12 gap-4">
         <div className="col-span-12 md:col-span-6">
-          <div className="h-full bg-white/5 dark:bg-gray-800 rounded-lg shadow flex flex-col">
+          <div className="h-full dark:bg-zinc-800 bg-slate-200 rounded-lg shadow flex flex-col">
             <Tracklist movie={movie} />
           </div>
         </div>
         <div className="col-span-12 md:col-span-6">
-          <div className="h-full bg-white/5 dark:bg-gray-800 rounded-lg shadow flex flex-col">
+          <div className="h-full dark:bg-zinc-800 bg-slate-200 rounded-lg shadow flex flex-col">
             <Trailer movieTitle={movie.title} />
           </div>
         </div>

@@ -32,7 +32,7 @@ const Tracklist = ({ movie }) => {
       <div className="flex items-stretch gap-4 dark:bg-zinc-800 bg-slate-200 p-4 rounded-lg">
         <div className="flex-shrink-0">
           <img
-            className="h-32 w-32 object-cover rounded-md"
+            className="w-50 object-cover rounded-md"
             src={tracklist.albumCover}
             alt={tracklist.albumTitle}
           />
