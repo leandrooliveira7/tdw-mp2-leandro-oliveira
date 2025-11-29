@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const tmdbApiTrending = createApi({
-  reducerPath: "tmdbApiTrending",
+export const tmdbApi = createApi({
+  reducerPath: "tmdbApi",
   baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }),
   endpoints: (builder) => ({
     getTrendingMovies: builder.query({
@@ -10,4 +10,4 @@ export const tmdbApiTrending = createApi({
   }),
 });
 
-export const { useGetTrendingMoviesQuery } = tmdbApiTrending;
+export const { useGetTrendingMoviesQuery } = tmdbApi;

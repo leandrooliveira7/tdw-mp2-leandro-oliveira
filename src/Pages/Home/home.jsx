@@ -1,11 +1,11 @@
 import React from "react";
-import { useGetMovieBySearchQuery } from "../../Services/tmdbAPI.js";
+import { useGetTrendingMoviesQuery } from "../../Services/tmdbAPI.js";
 import { GenreSelector } from "../../components/Movies/genreSelector.jsx";
 import { MovieGrid } from "../../components/Movies/movieGrid.jsx";
 import { SearchInput } from "../../components/Layouts/searchInput.jsx";
 
 const Home = () => {
-  const { data, error, isLoading } = useGetMovieBySearchQuery();
+  const { data, error, isLoading } = useGetTrendingMoviesQuery();
 
   if (isLoading) return <p>Carregando...</p>;
   if (error) return <p>Erro ao buscar os filmes.</p>;
