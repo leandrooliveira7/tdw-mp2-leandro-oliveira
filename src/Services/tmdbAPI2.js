@@ -4,11 +4,11 @@ export const tmdbApi = createApi({
   reducerPath: "tmdbApi2",
   baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }), // chama a função serverless
   endpoints: (builder) => ({
-    getMovieBySearch: builder.query({
-      query: (searchQuery) =>
-        `getMoviesByGenre?genreId=${encodeURIComponent(searchQuery)}`,
+    getMovieByGenre: builder.query({
+      query: (genreId) =>
+        `getMoviesByGenre?genreId=${encodeURIComponent(genreId)}`,
     }),
   }),
 });
 
-export const { useGetMovieBySearchQuery } = tmdbApi2;
+export const { useGetMovieByGenreQuery } = tmdbApi2;
