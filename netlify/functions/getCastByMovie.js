@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 export async function handler(event, context) {
   const movieId = event.queryStringParameters.movieId;
   const token = process.env.TMDB_TOKEN;

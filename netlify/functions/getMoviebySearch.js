@@ -1,22 +1,47 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+export async function handler(event, context) {
+  const query = event.queryStringParameters.query;
+  const token = process.env.TMDB_TOKEN;
 
-const token = process.env.TMDB_TOKEN;
+  if (!query) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Query não definida" }),
+    };
+  }
 
-export const tmdbApi4 = createApi({
-  reducerPath: "tmdbApi4",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.themoviedb.org/3",
-    prepareHeaders: (headers) => {
-      headers.set("Authorization", `Bearer ${token}`);
-      return headers;
-    },
-  }),
-  endpoints: (builder) => ({
-    getMoviebySearch: builder.query({
-      query: (query) =>
-        `/search/movie?query=${query}&include_adult=false&include_video=false&language=en-US`,
-    }),
-  }),
-});
+  if (!token) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "TMDB_TOKEN não definido" }),
+    };
+  }
 
-export const { useGetMoviebySearchQuery } = tmdbApi4;
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+        query
+      )}&include_adult=false&include_video=false&language=en-US`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error(`TMDB error: ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: error.message }),
+    };
+  }
+}
