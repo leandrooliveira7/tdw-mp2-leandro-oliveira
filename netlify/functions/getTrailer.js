@@ -8,7 +8,7 @@ export async function handler(event) {
     };
   }
 
-  const key = process.env.GOOGLE_API_KEY; // variável segura do Netlify
+  const key = process.env.GOOGLE_API_KEY;
   const query = encodeURIComponent(movieTitle + " trailer");
   const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${key}&type=video&maxResults=1`;
 
