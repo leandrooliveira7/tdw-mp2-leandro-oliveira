@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useGetMoviesByGenreQuery } from "../../Services/tmdbAPI2.js";
 import { GenreSelector } from "../../components/Movies/genreSelector.jsx";
 import { MovieGrid } from "../../components/Movies/movieGrid.jsx";
+import { SearchInput } from "../../components/Layouts/searchInput.jsx";
 
 const Genre = () => {
   const selectedGenre = useSelector((state) => state.genre.selectedGenre);
@@ -13,7 +14,6 @@ const Genre = () => {
   if (error) return <p>Something went wrong!</p>;
 
   return (
-    //TODO: adicionar campo de pesquisa aqui, junto ao género; o género tem de estar maior
     <div>
       <div className="p-5 m-4">
         <div className="flex items-center justify-between">

@@ -10,7 +10,7 @@ const Cast = ({ movieId }) => {
   const castToShow = data?.cast || [];
 
   return (
-    <div className="mt-6">
+    <div className="mt-5">
       <h2 className="text-xl font-semibold mb-2">Elenco</h2>
       {castToShow.length === 0 ? (
         <p>Nenhum ator disponível.</p>
@@ -27,8 +27,8 @@ const Cast = ({ movieId }) => {
                 alt={actor.name}
                 className="w-24 h-36 object-cover rounded-lg mb-1"
               />
-              <span className="text-xs text-gray-200 block">{actor.name}</span>
-              <span className="text-xs text-gray-400 block">
+              <span className="text-xs text-zinc-900 dark:text-slate-100 block">{actor.name}</span>
+              <span className="text-xs text-zinc-500 dark:text-slate-400 block">
                 {actor.character}
               </span>
             </li>

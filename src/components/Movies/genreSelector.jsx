@@ -12,7 +12,7 @@ const GenreSelector = () => {
     <Menu as="div" className="relative inline-block text-left w-full mt-5">
       <MenuButton
         className="inline-flex justify-between items-center w-full px-4 py-2 rounded-md 
-               text-sm font-medium hover:bg-gray-300 hover:text-black focus:outline-none focus:ring-0 bg-gray-700 text-white"
+               text-sm font-medium dark:hover:bg-violet-400 hover:bg-blue-500 hover:text-black focus:outline-none focus:ring-0 dark:bg-zinc-800 bg-zinc-300 hover:text-white"
       >
         Genre
         <ChevronDownIcon
@@ -20,8 +20,8 @@ const GenreSelector = () => {
           aria-hidden="true"
         />
       </MenuButton>
-      <MenuItems className="mt-2 w-full max-h-60 overflow-auto rounded-md focus:outline-none z-20 ">
-        <div className="py-2 bg-gray-700 rounded-md">
+      <MenuItems className="mt-2 w-full max-h-60 overflow-auto rounded-md focus:outline-none z-20">
+        <div className="py-2 text-zinc-900 hover:text-white focus:outline-none focus:ring-0 dark:bg-zinc-800 bg-zinc-300 rounded-md">
           {[
             { name: "Action", id: 28 },
             { name: "Adventure", id: 12 },
@@ -44,7 +44,7 @@ const GenreSelector = () => {
             <MenuItem key={genre.name}>
               {({ active }) => (
                 <button
-                  className={`w-full text-left px-4 py-2 text-sm text-white bg-gray-700 hover:bg-cyan-600
+                  className={`w-full text-left px-4 py-2 text-sm text-zinc-900 dark:text-white dark:hover:bg-violet-400 hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-0 dark:bg-zinc-800 bg-zinc-300
                           ${
                             active ? "bg-cyan-700" : ""
                           } focus:outline-none focus:ring-0`}

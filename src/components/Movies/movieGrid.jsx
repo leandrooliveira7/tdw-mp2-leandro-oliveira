@@ -16,7 +16,8 @@ const MovieGrid = ({ movies = [] }) => {
   return (
     <div className="justify-between">
       <h2 className="text-xl font-semibold mb-4">
-        Popular Movies <span className="text-cyan-600">this week</span>
+        Popular Movies{" "}
+        <span className="dark:text-violet-400 text-blue-500">this week</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {currentMovies.map((movie) => (
@@ -28,7 +29,7 @@ const MovieGrid = ({ movies = [] }) => {
         <button
           disabled={currentPage === 1}
           onClick={() => setCurrentPage((p) => p - 1)}
-          className="px-4 py-2 bg-gray-200 rounded-md text-sm hover:bg-cyan-300 disabled:opacity-40 text-black"
+          className="px-4 py-2 bg-zinc-300 hover:bg-blue-500 dark:bg-zinc-600 rounded-md text-sm dark:hover:bg-violet-400 disabled:opacity-40 text-black"
         >
           Previous
         </button>
@@ -41,8 +42,8 @@ const MovieGrid = ({ movies = [] }) => {
               onClick={() => setCurrentPage(pageNum)}
               className={`px-3 py-1 rounded-md text-sm ${
                 currentPage === pageNum
-                  ? "bg-cyan-600 text-black font-bold"
-                  : "bg-gray-700 hover:bg-cyan-600"
+                  ? "bg-zinc-300 hover:bg-blue-500 dark:bg-violet-400 text-black font-bold"
+                  : "bg-zinc-300 hover:bg-blue-500 dark:bg-zinc-700 dark:hover:bg-violet-400"
               }`}
             >
               {pageNum}
@@ -53,7 +54,7 @@ const MovieGrid = ({ movies = [] }) => {
         <button
           disabled={currentPage === totalPages}
           onClick={() => setCurrentPage((p) => p + 1)}
-          className="px-4 py-2 bg-gray-200 rounded-md text-sm hover:bg-cyan-300 disabled:opacity-40 text-black"
+          className="px-4 py-2 bg-zinc-300 hover:bg-blue-500 dark:bg-zinc-600 rounded-md text-sm dark:hover:bg-violet-400 disabled:opacity-40 text-black"
         >
           Next
         </button>

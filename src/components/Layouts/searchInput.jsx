@@ -35,7 +35,7 @@ const SearchInput = () => {
           type="search"
           placeholder="Search for a movie..."
           aria-label="Search movies"
-          className="w-full bg-white/90 border border-gray-300 rounded-full py-2 pl-10 pr-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          className="w-full bg-white-100 dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 rounded-full py-2 pl-10 pr-4 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2  focus:ring-blue-500 dark:focus:ring-violet-400 transition"
         />
       </div>
     </form>

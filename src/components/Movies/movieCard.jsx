@@ -15,7 +15,7 @@ const MovieCard = ({ movie = {} }) => {
         to={`/movie/moviedetails/${movie.id}`}
         onClick={() => dispatch(setSelectedMovie(movie))}
       >
-        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <article className="bg-slate-200 dark:bg-zinc-800 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-200">
           <img
             src={posterSrc}
             alt={movie.original_title}
@@ -25,16 +25,16 @@ const MovieCard = ({ movie = {} }) => {
             <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-1">
               {movie.original_title}
             </h3>
-            <h5 className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+            <h5 className="text-sm text-zinc-700 dark:text-zinc-400 mb-3">
               Release: {movie.release_date}
             </h5>
 
             <div className="flex items-center justify-between text-sm">
               <div className="w-2/3">
-                <span className="text-xs text-gray-600 dark:text-gray-300">
+                <span className="text-xs text-gray-600 dark:text-gray-300 mb-1">
                   Popularity
                 </span>
-                <div className="mt-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+                <div className="mt-1 w-full bg-zinc-600 dark:bg-zinc-400 rounded-full h-2 overflow-hidden">
                   <div title={`${movie.popularity}`} />
                 </div>
               </div>
@@ -43,7 +43,7 @@ const MovieCard = ({ movie = {} }) => {
                 <span className="text-xs text-gray-600 dark:text-gray-300">
                   Vote
                 </span>
-                <div className="mt-1 px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-semibold text-gray-900 dark:text-gray-100">
+                <div className="mt-1 px-2 py-1 bg-zinc-400 dark:bg-zinc-700 rounded-full text-sm font-semibold text-zinc-900 dark:text-gray-100">
                   {movie.vote_average}
                 </div>
               </div>

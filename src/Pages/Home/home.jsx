@@ -20,7 +20,7 @@ const Home = () => {
             <h1 className="font-bold">Welcome</h1>
             <h3 className="text-xl">
               Let's find a movie for{" "}
-              <span className="text-cyan-600 font-bold">you!</span>
+              <span className="text-blue-500 dark:text-violet-400 font-bold">you!</span>
             </h3>
           </div>
           <div className="flex">

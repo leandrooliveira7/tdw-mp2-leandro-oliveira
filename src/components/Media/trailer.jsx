@@ -5,19 +5,18 @@ const Trailer = ({ movieTitle }) => {
 
   console.log("Trailer response:", data);
 
-  if (isLoading) return <p>Carregando trailer...</p>;
-  if (error) return <p>Erro ao carregar trailer</p>;
+  if (isLoading) return <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">Carregando trailer...</p>;
+  if (error) return <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">Erro ao carregar trailer</p>;
 
   const trailer = data.items[0];
 
-  if (!trailer) return <p>Trailer não disponível</p>;
+  if (!trailer) return <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">Trailer não disponível</p>;
 
   return (
-    <div className="p-4 m-5 justify-between">
-      <div>
-        <iframe rounded-lg
-          width="560"
-          height="315"
+    <div className="m-5 p-4 rounded-lg dark:bg-zinc-800 bg-slate-200">
+      <div className="w-full h-full">
+        <iframe
+          className="w-full h-64 sm:h-80 md:h-96 rounded-lg"
           src={`https://www.youtube.com/embed/${trailer.id.videoId}`}
           title={trailer.snippet.title}
           frameBorder="0"
