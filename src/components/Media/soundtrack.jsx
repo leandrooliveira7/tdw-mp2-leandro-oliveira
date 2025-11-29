@@ -29,10 +29,10 @@ const Tracklist = ({ movie }) => {
   };
   return (
     <div className="p-4">
-      <div className="flex items-center gap-4 dark:bg-zinc-800 bg-slate-200 p-4 rounded-lg justify-between content-center">
+      <div className="flex items-stretch gap-4 dark:bg-zinc-800 bg-slate-200 p-4 rounded-lg justify-between content-center">
         <div className="flex-shrink-0">
           <img
-            className="w-70 object-cover rounded-md"
+            className="w-80 object-cover rounded-md"
             src={tracklist.albumCover}
             alt={tracklist.albumTitle}
           />
