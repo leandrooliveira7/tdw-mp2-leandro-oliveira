@@ -1,8 +1,8 @@
 import React from "react";
-import { useGetCastbyMovieQuery } from "../../Services/tmdbAPI3.js";
+import { useGetCastByMovieQuery } from "../../Services/tmdbAPI3.js";
 
 const Cast = ({ movieId }) => {
-  const { data, isLoading, error } = useGetCastbyMovieQuery(movieId);
+  const { data, isLoading, error } = useGetCastByMovieQuery(movieId);
 
   if (isLoading) return <p>Carregando elenco...</p>;
   if (error) return <p>Erro ao carregar elenco.</p>;

@@ -1,11 +1,11 @@
-import { useGetMoviebySearchQuery } from "../../Services/tmdbAPI4.js";
+import { useGetMovieBySearchQuery } from "../../Services/tmdbAPI4.js";
 import { useParams } from "react-router-dom";
 import { MovieGrid } from "../Movies/movieGrid.jsx";
 import { SearchInput } from "../Layouts/searchInput.jsx";
 
 const SearchResults = () => {
   const { query } = useParams();
-  const { data, isLoading, error } = useGetMoviebySearchQuery(query);
+  const { data, isLoading, error } = useGetMovieBySearchQuery(query);
 
   if (isLoading) return (
     <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">Loading...</p>
