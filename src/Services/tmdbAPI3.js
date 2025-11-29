@@ -11,4 +11,4 @@ export const tmdbApi = createApi({
   }),
 });
 
-export const { useGetCastByMovieQuery } = tmdbApi;
+export const { useGetCastByMovieQuery } = tmdbApi3;
