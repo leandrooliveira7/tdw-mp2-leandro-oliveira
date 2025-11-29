@@ -10,29 +10,32 @@ const Genre = () => {
     selectedGenre?.id
   );
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Something went wrong!</p>;
+  if (isLoading) return (
+    <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">Loading...</p>
+  );
+  if (error) return (
+    <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">
+      Something went wrong!
+    </p>
+  );
 
   return (
-    <div>
-      <div className="p-5 m-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="font-bold text-xl">
-              {selectedGenre ? selectedGenre.name : "No genre selected"}
-            </h1>
-            <div className="flex">
-              <SearchInput />
-            </div>
-          </div>
+    <div className="p-5 m-4">
+      <div className="flex items-center justify-between mb-4">
+        <h1 className="font-bold text-xl">
+          {selectedGenre ? selectedGenre.name : "No genre selected"}
+        </h1>
 
-          <GenreSelector className="mb-3" />
-
-          <div className="mt-3">
-            <MovieGrid movies={data?.results || []} />
-          </div>
+        <div className="flex">
+          <SearchInput />
         </div>
       </div>
+
+      <div className="mb-6">
+        <GenreSelector />
+      </div>
+
+      <MovieGrid movies={data?.results || []} />
     </div>
   );
 };

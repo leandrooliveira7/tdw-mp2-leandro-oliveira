@@ -7,8 +7,14 @@ const SearchResults = () => {
   const { query } = useParams();
   const { data, isLoading, error } = useGetMoviebySearchQuery(query);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Ocorreu um erro ao pesquisar.</p>;
+  if (isLoading) return (
+    <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">Loading...</p>
+  );
+  if (error) return (
+    <p className="p-3 rounded-lg dark:bg-zinc-800 bg-slate-200">
+      Ocorreu um erro ao pesquisar.
+    </p>
+  );
 
   return (
     <div className="p-4 m-5">
