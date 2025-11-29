@@ -6,7 +6,7 @@ export const tmdbApi2 = createApi({
   endpoints: (builder) => ({
     getMoviesByGenre: builder.query({
       query: (genreId) =>
-        `getMoviesByGenre?genreId=${encodeURIComponent(genreId)}`,
+        `getMoviesbyGenre?genreId=${encodeURIComponent(genreId)}`,
     }),
   }),
 });

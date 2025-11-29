@@ -5,7 +5,7 @@ export const tmdbApi4 = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }),
   endpoints: (builder) => ({
     getMovieBySearch: builder.query({
-      query: (query) => `getMovieBySearch?query=${encodeURIComponent(query)}`,
+      query: (query) => `getMoviebySearch?query=${encodeURIComponent(query)}`,
     }),
   }),
 });

@@ -76,7 +76,7 @@ const SearchSlice = createSlice({
   },
   reducers: {
     setResults: (state, action) => {
-      const { movieId, trailers } = action.payload;
+      const { movieId, results } = action.payload;
       state.results[movieId] = results;
     },
   },
