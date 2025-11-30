@@ -22,26 +22,18 @@ const movieSlice = createSlice({
   name: "movie",
   initialState: {
     selectedMovie: null,
+    selectedMovieDetails: null, // novo estado para os detalhes
   },
   reducers: {
     setSelectedMovie: (state, action) => {
       state.selectedMovie = action.payload;
     },
-  },
-});
-
-const castSlice = createSlice({
-  name: "cast",
-  initialState: {
-    casts: {},
-  },
-  reducers: {
-    setCast: (state, action) => {
-      const { movieId, cast } = action.payload;
-      state.casts[movieId] = cast;
+    setSelectedMovieDetails: (state, action) => {
+      state.selectedMovieDetails = action.payload;
     },
   },
 });
+
 
 const TracklistSlice = createSlice({
   name: "tracklist",
@@ -83,8 +75,7 @@ const SearchSlice = createSlice({
 });
 
 export const { setGenero } = genreSlice.actions;
-export const { setSelectedMovie } = movieSlice.actions;
-export const { setCast } = castSlice.actions;
+export const { setSelectedMovie, setSelectedMovieDetails } = movieSlice.actions;
 export const { setTracklist } = TracklistSlice.actions;
 export const { setTrailers } = TrailerSlice.actions;
 export const { setResults } = SearchSlice.actions;

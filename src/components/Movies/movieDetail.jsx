@@ -7,6 +7,7 @@ import { Trailer } from "../Media/trailer.jsx";
 
 const MovieDetail = () => {
   const movie = useSelector((state) => state.movie.selectedMovie);
+  const movieDetails = useSelector((state) => state.movie.selectedMovieDetails);
 
   if (!movie) {
     return (
@@ -17,7 +18,7 @@ const MovieDetail = () => {
     );
   }
 
-  console.log("MovieDetail movie:", movie);
+  console.log("MovieDetail movie:", movieDetails);
 
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -39,10 +40,10 @@ const MovieDetail = () => {
             {movie.title}
           </h1>
           <h3 className="mb-3 text-zinc-900 dark:text-slate-100">
-            {movie.tagline}
+            {movieDetails.tagline}
           </h3>
           <h5 className="mb-3 text-zinc-900 dark:text-slate-100">
-            {movie.production_companies?.[0]?.name}
+            {movieDetails.production_companies?.[0]?.name}
           </h5>
           <p className="mb-3 text-zinc-900 dark:text-slate-100">
             {movie.overview}
@@ -54,7 +55,7 @@ const MovieDetail = () => {
                   {new Date(movie.release_date).getFullYear()}
                 </span>
               )}
-              {movie.runtime && (
+              {movieDetails?.runtime && (
                 <span className="px-2 py-1 bg-white/5 rounded-md">
                   {movie.runtime} min
                 </span>
@@ -82,7 +83,7 @@ const MovieDetail = () => {
               </div>
             )}
 
-            <Cast movieId={movie.id} />
+            <Cast cast={movieDetails?.credits?.cast} />
 
             <div className="mt-6 flex items-center gap-3">
               <button
