@@ -17,6 +17,8 @@ const MovieDetail = () => {
       </div>
     );
   }
+
+  console.log("MovieDetail movie:", movieDetails);
   if (!movieDetails) {
     return (
       <div className="p-5">
@@ -25,8 +27,6 @@ const MovieDetail = () => {
       </div>
     );
   }
-
-  console.log("MovieDetail movie:", movieDetails);
 
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`

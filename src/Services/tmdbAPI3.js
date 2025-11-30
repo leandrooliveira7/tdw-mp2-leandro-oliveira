@@ -1,14 +1,13 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
 export const tmdbApi3 = createApi({
   reducerPath: "tmdbApi3",
   baseQuery: fetchBaseQuery({ baseUrl: "/.netlify/functions/" }),
   endpoints: (builder) => ({
-    getCastByMovie: builder.query({
+    getMovieDetails: builder.query({
+      // alterei o nome para ficar mais claro
       query: (movieId) =>
-        `getCastByMovie?movieId=${encodeURIComponent(movieId)}`,
+        `getCastByMovie?movieId=${encodeURIComponent(movieId)}`, // mantém a mesma Netlify Function
     }),
   }),
 });
 
-export const { useGetCastByMovieQuery } = tmdbApi3;
+export const { useMovieDetailsQuery } = tmdbApi3;
