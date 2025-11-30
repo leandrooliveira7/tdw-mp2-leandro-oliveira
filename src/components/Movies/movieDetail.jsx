@@ -62,10 +62,10 @@ const MovieDetail = () => {
           <h1 className="mb-2 text-2xl font-semibold text-zinc-900 dark:text-slate-100">
             {movie.title}
           </h1>
-          <h3 className="mb-3 text-zinc-900 dark:text-slate-100 font-xl">
-            {movieDetails.tagline}
+          <h3 className="mb-3 text-zinc-900 dark:text-slate-100 text-xl">
+            "{movieDetails.tagline}"
           </h3>
-          <h5 className="mb-3 text-zinc-900 dark:text-slate-100 font-md">
+          <h5 className="mb-3 text-zinc-900 dark:text-slate-100 text-md">
             {movieDetails.production_companies?.[0]?.name}
           </h5>
           <p className="mb-3 text-zinc-900 dark:text-slate-100">
@@ -80,7 +80,7 @@ const MovieDetail = () => {
                 </span>
               )}
               {movieDetails.runtime && (
-                <span className="px-2 py-1 bg-white/5 rounded-md">
+                <span className="px-2 py-1 bg-zinc-300 dark:bg-zinc-600 rounded-md">
                   {movieDetails.runtime} min
                 </span>
               )}
