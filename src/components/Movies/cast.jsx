@@ -1,13 +1,9 @@
 import React from "react";
-import { useGetCastByMovieQuery } from "../../Services/tmdbAPI3.js";
 
-const Cast = ({ movieId }) => {
-  const { data, isLoading, error } = useGetCastByMovieQuery(movieId);
+const Cast = ({ cast }) => {
+  if (!cast) return <p>Carregando elenco...</p>;
 
-  if (isLoading) return <p>Carregando elenco...</p>;
-  if (error) return <p>Erro ao carregar elenco.</p>;
-
-  const castToShow = data?.cast || [];
+  const castToShow = cast;
 
   return (
     <div className="mt-5">
@@ -27,7 +23,9 @@ const Cast = ({ movieId }) => {
                 alt={actor.name}
                 className="w-24 h-36 object-cover rounded-lg mb-1"
               />
-              <span className="text-xs text-zinc-900 dark:text-slate-100 block">{actor.name}</span>
+              <span className="text-xs text-zinc-900 dark:text-slate-100 block">
+                {actor.name}
+              </span>
               <span className="text-xs text-zinc-500 dark:text-slate-400 block">
                 {actor.character}
               </span>
