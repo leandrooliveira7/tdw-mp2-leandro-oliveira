@@ -5,7 +5,7 @@ export async function handler(event, context) {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${encodeURIComponent(
       movieId
-    )}/credits?language=en-US`,
+    )}?language=en-US&append_to_response=credits`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
