@@ -17,6 +17,14 @@ const MovieDetail = () => {
       </div>
     );
   }
+  if (!movieDetails) {
+    return (
+      <div className="p-5">
+        <h2 className="text-xl font-bold">Carregando...</h2>
+        <p>Buscando informações detalhadas do filme.</p>
+      </div>
+    );
+  }
 
   console.log("MovieDetail movie:", movieDetails);
 
@@ -40,10 +48,10 @@ const MovieDetail = () => {
             {movie.title}
           </h1>
           <h3 className="mb-3 text-zinc-900 dark:text-slate-100">
-            {movieDetails.tagline}
+            {movieDetails?.tagline}
           </h3>
           <h5 className="mb-3 text-zinc-900 dark:text-slate-100">
-            {movieDetails.production_companies?.[0]?.name}
+            {movieDetails?.production_companies?.[0]?.name}
           </h5>
           <p className="mb-3 text-zinc-900 dark:text-slate-100">
             {movie.overview}
@@ -57,7 +65,7 @@ const MovieDetail = () => {
               )}
               {movieDetails?.runtime && (
                 <span className="px-2 py-1 bg-white/5 rounded-md">
-                  {movie.runtime} min
+                  {movieDetails?.runtime} min
                 </span>
               )}
               <span className="px-2 py-1 bg-zinc-300 dark:bg-zinc-600 rounded-md">
