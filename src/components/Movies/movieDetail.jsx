@@ -8,7 +8,6 @@ import { useGetMovieDetailsQuery } from "../../Services/tmdbAPI3.js";
 const MovieDetail = () => {
   const movie = useSelector((state) => state.movie.selectedMovie);
 
-  // Usa RTK Query para buscar detalhes
   const {
     data: movieDetails,
     isLoading,
@@ -63,10 +62,10 @@ const MovieDetail = () => {
           <h1 className="mb-2 text-2xl font-semibold text-zinc-900 dark:text-slate-100">
             {movie.title}
           </h1>
-          <h3 className="mb-3 text-zinc-900 dark:text-slate-100">
+          <h3 className="mb-3 text-zinc-900 dark:text-slate-100 font-xl">
             {movieDetails.tagline}
           </h3>
-          <h5 className="mb-3 text-zinc-900 dark:text-slate-100">
+          <h5 className="mb-3 text-zinc-900 dark:text-slate-100 font-md">
             {movieDetails.production_companies?.[0]?.name}
           </h5>
           <p className="mb-3 text-zinc-900 dark:text-slate-100">
@@ -74,6 +73,26 @@ const MovieDetail = () => {
           </p>
 
           <div className="mt-6">
+            <div className="flex items-center gap-4 text-sm text-zinc-700 dark:text-slate-200">
+              {movie.release_date && (
+                <span className="px-2 py-1 bg-zinc-300 dark:bg-zinc-600 rounded-md">
+                  {new Date(movie.release_date).getFullYear()}
+                </span>
+              )}
+              {movieDetails.runtime && (
+                <span className="px-2 py-1 bg-white/5 rounded-md">
+                  {movieDetails.runtime} min
+                </span>
+              )}
+              <span className="px-2 py-1 bg-zinc-300 dark:bg-zinc-600 rounded-md">
+                <span className="dark:text-violet-400 text-blue-500 font-semibold">
+                  {movie.vote_average ? movie.vote_average.toFixed(1) : "—"}
+                </span>
+                <span className="ml-2 text-xs text-gray-400">
+                  ({movie.vote_count ?? 0})
+                </span>
+              </span>
+            </div>
             {movie.genres?.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {movie.genres.map((g) => (
