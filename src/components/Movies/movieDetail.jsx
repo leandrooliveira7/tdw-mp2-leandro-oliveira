@@ -17,6 +17,8 @@ const MovieDetail = () => {
     );
   }
 
+  console.log("MovieDetail movie:", movie);
+
   const posterSrc = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : "https://via.placeholder.com/300x450?text=No+Image";
@@ -36,6 +38,12 @@ const MovieDetail = () => {
           <h1 className="mb-2 text-2xl font-semibold text-zinc-900 dark:text-slate-100">
             {movie.title}
           </h1>
+          <h3 className="mb-3 text-zinc-900 dark:text-slate-100">
+            {movie.tagline}
+          </h3>
+          <h5 className="mb-3 text-zinc-900 dark:text-slate-100">
+            {movie.production_companies?.[0]?.name}
+          </h5>
           <p className="mb-3 text-zinc-900 dark:text-slate-100">
             {movie.overview}
           </p>
